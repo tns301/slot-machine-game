@@ -1,7 +1,7 @@
 import { Component, h, State } from '@stencil/core'
 
 import { reels } from './assets/reel-data/reels'
-import { ReelsData } from './models/reel-data'
+import { ReelData } from './models/reel-data'
 import { ReelItemData } from './models/reel-item-data'
 
 @Component({
@@ -100,9 +100,9 @@ export class GameMain {
         <div class="game-view__slot">
           <div class="game-view__slot__top">
             <div class="game-view__slot__top__reels">
-              {reels?.reels?.map((reelData: ReelsData, index: number) =>
+              {reels?.reels?.map((reelData: ReelData, index: number) =>
                 <slot-reel
-                  data={reelData.reel}
+                  data={reelData}
                   ref={el => this.reelsColRef[index] = el as HTMLSlotReelElement}
                 >
                 </slot-reel>
