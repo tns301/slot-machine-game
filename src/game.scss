@@ -1,0 +1,157 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+game-main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  .game-view {
+    display: flex;
+  
+    height: 100%;
+    width: 100%;
+    
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__slot {
+      position: relative;
+
+      &__top {
+        border: solid 7px #fff18d;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 10px 7px 0 rgb(0 0 0 / 10%);
+
+        &__reels {
+          position: relative;
+      
+          background: #8e8e8e;
+      
+          display: flex;
+          height: 300px;
+          width: 520px;
+      
+          overflow: hidden;
+
+          border-top: solid 5px #e8c15e;
+          border-top-right-radius: 14px;
+          border-top-left-radius: 14px;
+          border-bottom: solid 5px #e8c15e;
+          border-bottom-left-radius: 14px;
+          border-bottom-right-radius: 14px;
+          box-shadow: inset 0 -1px 20px #000;
+      
+          slot-reel {
+            position: relative;
+            width: 100px;
+            box-shadow: inset 0 -10px 20px -15px, inset 0 10px 20px -15px;
+            background: linear-gradient(180deg, #f9f9f9 0%, white 30%, white 70%, #f9f9f9 100%);
+      
+            &:not(:first-child) {
+              margin-left: 5px;
+            }
+          }
+      
+          slot-reel-item {
+            display: flex;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+      
+            align-items: center;
+            justify-content: center;
+    
+            box-shadow: inset 0 0 5px rgb(0 0 0 / 10%);
+      
+            img {
+              width: 70px;
+              height: 70px;
+            }
+    
+            &.winner {
+              img {
+                animation: jelly-horizontal 1.25s infinite both;
+              }
+            }
+    
+            &.looser {
+              background: rgb(0 0 0 / 10%);
+              img {
+                opacity: 30%;
+              }
+            }
+    
+            @keyframes jelly-horizontal {
+              0% {
+                transform: scale3d(1, 1, 1);
+              }
+              30% {
+                transform: scale3d(1.25, 0.75, 1);
+              }
+              40% {
+                transform: scale3d(0.75, 1.25, 1);
+              }
+              50% {
+                transform: scale3d(1.15, 0.85, 1);
+              }
+              65% {
+                transform: scale3d(0.95, 1.05, 1);
+              }
+              75% {
+                transform: scale3d(1.05, 0.95, 1);
+              }
+              100% {
+                transform: scale3d(1, 1, 1);
+              }
+            }        
+          }
+        }
+      }
+    
+      &__bottom {
+        position: relative;
+        width: 540px;
+        height: 140px;
+    
+        &__button {
+          margin-top: 15px;
+          width: 100px;
+          height: 100px;
+          border: none;
+          position: absolute;
+          background: #f75a86;
+          border-radius: 100%;
+          left: 50%;
+    
+          transform: translateX(-50%) scaleY(0.6);
+    
+          box-shadow: 0 5px 0 #ed2061, 0 10px 0 #ed2061, 0 15px 0 #ed2061, 10px 30px 0 rgb(0 0 0 / 10%);
+    
+          &:disabled {
+            transform: translateX(-50%) scaleY(0.6);
+            box-shadow: 0 5px 0 #ed2061, 5px 15px 0 rgb(0 0 0 / 10%);
+            top: 6px;
+          }
+        }
+      }
+    }
+  }
+}

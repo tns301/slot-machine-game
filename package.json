@@ -1,0 +1,19 @@
+{
+  "name": "slot-game",
+  "private": true,
+  "version": "0.0.1",
+  "description": "slot game",
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.0.0",
+    "@stencil/sass": "^1.4.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.7.0"
+  }
+}
