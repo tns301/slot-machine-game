@@ -128,8 +128,10 @@ game-main {
     
       &__bottom {
         position: relative;
-        width: 540px;
+        width: 520px;
         height: 140px;
+        display: flex;
+        justify-content: center;
     
         &__button {
           margin-top: 15px;
@@ -139,14 +141,13 @@ game-main {
           position: absolute;
           background: #f75a86;
           border-radius: 100%;
-          left: 50%;
     
-          transform: translateX(-50%) scaleY(0.6);
+          transform: scaleY(0.6);
     
           box-shadow: 0 5px 0 #ed2061, 0 10px 0 #ed2061, 0 15px 0 #ed2061, 10px 30px 0 rgb(0 0 0 / 10%);
     
           &:disabled {
-            transform: translateX(-50%) scaleY(0.6);
+            transform: scaleY(0.6);
             box-shadow: 0 5px 0 #ed2061, 5px 15px 0 rgb(0 0 0 / 10%);
             top: 6px;
           }
