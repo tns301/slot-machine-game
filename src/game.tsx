@@ -34,7 +34,7 @@ export class GameMain {
       this.sendWinningReelItems()
 
       if (this.isSpecial) {
-        this.playSpecialAnimatioon().then(() => {
+        this.playSpecialAnimation().then(() => {
           Promise.all(this.startSpinAnimation()).then((visibleReelItems: ReelItemData[][]) => {
             this.getWinningReelItems(visibleReelItems.flat())
             this.sendWinningReelItems()
@@ -93,7 +93,7 @@ export class GameMain {
     return visibleItems
   }
 
-  private playSpecialAnimatioon(): Promise<boolean> {
+  private playSpecialAnimation(): Promise<boolean> {
     return new Promise(resolve =>
       gsap.to(this.jackpotRef,
         {
