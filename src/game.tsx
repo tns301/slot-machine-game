@@ -145,7 +145,7 @@ export class GameMain {
             </div>
           </div>
           <div class="game-view__slot__bottom">
-            <button class="game-view__slot__bottom__button" onClick={() => this.startSpin()} disabled={this.buttonDisabled}></button>
+            <button class="game-view__slot__bottom__button" onClick={() => this.startSpin()} disabled={this.buttonDisabled}>SPIN</button>
           </div>
         </div>
       </div>
